@@ -66,17 +66,31 @@ namespace AddressBook
                         default:
                             break;
                     }
+
                 }
             }
         }
-        public void Display()
+        public void DeleteContact(string name)
         {
-            Console.WriteLine("\n");
-            Console.WriteLine("Contacts in Your Device : ");
+            // Addressbook delete = new Addressbook(); 
             foreach (var contact in addressList)
             {
-                Console.WriteLine(contact.FirstName + "\t" + contact.LastName + "\t" + contact.City + "---" + contact.MobileNumber);
+                if (contact.FirstName == name || contact.LastName == name)
+                {
+                    addressList.Remove(contact);
+                }
             }
-        }   
+
+        }    
+            
+            public void Display()
+            {
+                Console.WriteLine("\n");
+                Console.WriteLine("Contacts in Your Device : ");
+                foreach (var contact in addressList)
+                {
+                    Console.WriteLine(contact.FirstName + "\t" + contact.LastName + "\t" + contact.City + "---" + contact.MobileNumber);
+                }
+            }
      }
 }
