@@ -52,19 +52,17 @@ namespace AddressBook
                         addressbook.Display();
                         break;
                     case 3:
-                        Console.WriteLine("Enter the Contact Name to  Edit: ");
+                        Console.WriteLine("Enter the Unique Name to  Edit: ");
                         string name = Console.ReadLine();
                         addressBook.EditContact(name);
                         Console.WriteLine("Contact is Edited Sucsessfully");
                         addressBook.Display();
                         break;
                     case 4:
-                        Console.WriteLine("Enter the contact you want to delete :");
+                        Console.WriteLine("Enter the unique contact you want to delete :");
                         string detail = Console.ReadLine();
                         //  Contact cont = new Contact();
                         AddressBook delete = new AddressBook();
-
-                        delete.DeleteContact(detail);
                         delete.Display();
                         break;
                     case 5:
