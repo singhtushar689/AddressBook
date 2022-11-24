@@ -9,16 +9,18 @@ namespace AddressBook
         {
             Console.WriteLine("Hello, World!");
              bool flag = true;
+            Contact contact = new Contact();
+            AddressBook addressBook = new AddressBook();
             while (flag)
             {
                 Console.WriteLine("Welcome to AddressBook");
-                Console.WriteLine("Enter what you want to do : \n 1. Create Contacts \n 2. Add Contacts \n 3. Exit");
+                Console.WriteLine("Enter what you want to do : \n 1. Create Contacts \n 2. Add Contacts \n 3. Edit Contacts \n 4. Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
                     case 1:
                         Console.WriteLine("Enter the Contact details of FirstName, LastName, Address, City, State, Zip, Mobilenumber, Email");
-                        Contact contact = new Contact()
+                        Contact  con= new Contact()
                         {
                             FirstName = Console.ReadLine(),
                             LastName = Console.ReadLine(),
@@ -49,6 +51,13 @@ namespace AddressBook
                         addressbook.Display();
                         break;
                     case 3:
+                        Console.WriteLine("Enter the Contact Name to  Edit: ");
+                        string name = Console.ReadLine();
+                        addressBook.EditContact(name);
+                        Console.WriteLine("Contact is Edited Sucsessfully");
+                        addressBook.Display();
+                        break;
+                    case 4:
                         flag = false;
                         break;
                 }
